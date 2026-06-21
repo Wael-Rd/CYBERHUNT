@@ -1,11 +1,9 @@
-# ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██╗  ██╗██╗   ██╗███╗   ██╗████████╗███████╗██████╗ 
-# ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██║  ██║██║   ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗
-# ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝███████║██║   ██║██╔██╗ ██║   ██║   █████╗  ██████╔╝
-# ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══██║██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗
-# ╚██████╗   ██║   ██████╔╝███████╗██║  ██║██║  ██║╚██████╔╝██║ ╚████║   ██║   ███████╗██║  ██║
-#  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
-# 
-#               🤖 MULTI-AGENT CYBERSECURITY COMMAND & OPERATIONS CENTER 🤖
+<div align="center">
+
+# CYBERHUNT COMMAND CENTER
+### Autonomous Multi-Agent Cybersecurity Operations & Orchestration Hub
+
+---
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
@@ -14,51 +12,60 @@
 [![Socket.io](https://img.shields.io/badge/Socket.io-4-010101?style=for-the-badge&logo=socket.io)](https://socket.io/)
 [![Node-PTY](https://img.shields.io/badge/Node--PTY-Terminal_Bridge-green?style=for-the-badge)](https://github.com/microsoft/node-pty)
 
-**CYBERHUNTER Command Center** is an ultramodern, premium-designed cybersecurity multi-agent operations hub. It orchestrates a mesh network of autonomous, highly specialized AI security agents directly in your workspace. Equipped with real-time terminal rendering (xterm.js), dynamic D3.js force-directed attack graphs, live threat logs, and a dynamic forensic report compiler, it represents the next generation of automated defense and offensive validation.
+---
+
+<p align="center">
+  CYBERHUNT Command Center is an enterprise-grade cybersecurity operations dashboard that coordinates a mesh network of autonomous, highly specialized security agents directly within your local workspace. Featuring low-latency terminal emulators (xterm.js), dynamic force-directed attack topology graphs (D3.js), live SOC-style threat logging, and an integrated chronological report compiler, the dashboard enables streamlined automated testing and auditing.
+</p>
+
+</div>
 
 ---
 
-## 🌌 Core Features
+## 🌌 Core Capabilities
 
-*   **📈 Real-Time D3.js Attack Graph** — Dynamic, interactive topology visualization. Simulates exploit path propagation, network infection vectors, and exfiltration targets in real-time.
-*   **💻 Autonomous PTY Console Frame** — Multiple resizable, low-latency terminals running native command-line shells (`node-pty`) driven by autonomous security agents.
-*   **🚨 Live Threat Feed** — Chronological SOC-style event log with classification tags mapping out attack tactics (Recon, Lateral Movement, Privilege Escalation).
-*   **🛡️ Dynamic Security KPI Metrics** — Animated risk gauges, MITRE ATT&CK coverage tracking, network uptime levels, and SOC compliance score tracking.
-*   **📄 Forensic Report Compiler** — Auto-compiles chronological security reports directly from terminal socket activity and agent session history.
+*   **Attack Path Visualization** — Dynamic force-directed network topology mapping that renders active exploit routes, node compromises, and lateral movements in real time.
+*   **Low-Latency Terminal PTYs** — Multiple resizable, high-performance terminal consoles (`node-pty`) connected directly to active agent sandboxes over Socket.IO.
+*   **Triage Logging Feed** — Real-time event log streaming with threat classification tags mapping adversarial behaviors directly to mitigation rules.
+*   **Performance Metrics Dashboard** — Interactive status gauges tracking open security incidents, MITRE ATT&CK coverage percentage, network uptime, and overall workspace risk scores.
+*   **Automated Audit Compiler** — Local Markdown reporter that compiles detailed PTES-compliant event records and command execution logs from terminal sessions.
 
 ---
 
-## 🧩 The Agent Mesh & Core Personas
+## 🧩 Autonomous Agent Grid
 
-The system coordinates 5 distinct AI agent operations, each aligned to a specific cybersecurity discipline:
+<div align="center">
 
-| Agent | Console Accent | Role & Responsibility | Frameworks / Focus |
+| Agent | Module Badges | Core Responsibility | Framework Alignment |
 | :--- | :--- | :--- | :--- |
-| **🛡️ AUDIT** | Emerald | Compliance checks, IAM role review, encryption audit, and credential harvesting sweeps. | SOC2 Trust Criteria, ISO 27001 Annex A |
-| **🚨 SOC** | Blue | Live log monitoring, host event analysis, network triage, and incident containment. | NIST SP 800-61 Rev 2 |
-| **🧠 CTI** | Violet | Threat intelligence, OSINT gathering, adversary profiling, and TTP mapping. | MITRE ATT&CK Matrix |
-| **🎯 PENTEST** | Red | Active target scanning, vulnerability discovery, SQL Injection testing, and exploit mapping. | PTES Framework, OWASP Top 10 |
-| **🤖 AUTO-USE** | Amber | Desktop GUI automation, browser-based target interaction, and tool orchestration. | Playwright, Python PyAutoGUI |
+| **AUDIT** | ![Audit](https://img.shields.io/badge/Audit_Agent-10b981?style=flat-square&logo=securityscorecard&logoColor=white) | Compliance checks, directory access-control reviews, encryption auditing, and credential leak sweeps. | SOC2 Trust Criteria / ISO 27001 |
+| **SOC** | ![SOC](https://img.shields.io/badge/SOC_Agent-3b82f6?style=flat-square&logo=datadog&logoColor=white) | SIEM log monitoring, telemetry correlation, threat ingestion, and endpoint containment. | NIST SP 800-61 Rev 2 |
+| **CTI** | ![CTI](https://img.shields.io/badge/CTI_Agent-8b5cf6?style=flat-square&logo=shodan&logoColor=white) | Threat intelligence gathering, OSINT searches, adversary profiling, and TTP mapping. | MITRE ATT&CK Framework |
+| **PENTEST** | ![Pentest](https://img.shields.io/badge/Pentest_Agent-ef4444?style=flat-square&logo=target&logoColor=white) | Automated reconnaissance, vulnerability validation, SQL Injection checking, and exploit route execution. | PTES / OWASP Top 10 |
+| **AUTO-USE** | ![Auto-Use](https://img.shields.io/badge/Auto--Use_Agent-f59e0b?style=flat-square&logo=google-chrome&logoColor=white) | Desktop GUI task execution, browser automation, and integration of external security tools. | Playwright / PyAutoGUI |
 
-> [!NOTE]
-> **CTI Agent Identity Alignment:** The Cyber Threat Intelligence (CTI) Agent has been explicitly configured to function as a professional CTI analyst and principal threat investigator. All default AI self-identifications (like Google Gemini) are overridden to maintain operations-grade immersion.
+</div>
 
 ---
 
-## ⚡ The Key of Power (Gemini API Configuration)
+## ⚡ The Key of Power (LLM API Configuration)
 
-The lifeblood of the CYBERHUNTER multi-agent system is the **Gemini API Key**—referred to as the **Key of Power**. This key must be configured correctly across all agent workspaces to enable autonomous decision-making, tool execution, and reasoning.
+<div align="center">
+  <p>
+    The entire cognitive operations engine of the CYBERHUNT agent mesh is powered by the Gemini API Key, designated as the <strong>Key of Power</strong>. This key must be present in the shell configuration files of each agent workspace to enable reasoning, tool selection, and script execution.
+  </p>
+</div>
 
 ### 🔑 Setting up the API Key
 
-Create or update the configuration inside each agent's execution shell (`xhunter.sh`) or save it globally in your environment variables:
+Export your API token locally in the shell scripts of the respective agents:
 
 ```bash
-# Export the API Key to power the autonomous engines
+# Add to agent startup shell scripts (e.g. xhunter.sh)
 export GEMINI_API_KEY="your_gemini_api_key_here"
 ```
 
-You can verify the configuration directly in each agent directory:
+Verify that the key is exported correctly in the following entrypoints:
 *   `auditAGENT/xhunter-working/xhunter.sh`
 *   `ctiAGENT/xhunter-working/xhunter.sh`
 *   `socAGENT/xhunter-working/xhunter.sh`
@@ -66,22 +73,25 @@ You can verify the configuration directly in each agent directory:
 
 ---
 
-## 📄 Chronological PTES & OWASP Report Compiler
+## 📄 Automated PTES & Compliance Report Compiler
 
-The backend incorporates a dynamic **Security Assessment Report Compiler** inside `/mini-services/cyberhunter-bridge`. When clicking **"Generate Report"**, the backend parses the active Socket.IO terminal buffer or workspace session history to build a highly detailed markdown file containing:
+<p align="center">
+  The system bridge backend manages terminal streams and translates them into comprehensive security assessment records. When a report is requested, the compiler parses the session data and writes a standard-compliant report featuring the following key components:
+</p>
 
-1.  **Executive Summary & Security Posture** — Dynamic risk scores and uptime metrics based on node status.
-2.  **Methodology & Scope** — Standard-compliant validation testing phases.
-3.  **Chronological Attack Path & Chronology** — Lists every single command run, its objective, execution status (✅/❌), and the raw console `stdout` evidence.
-4.  **Action Gaps & Prioritized Action Plans** — Tailor-made remediation steps based on target results.
+1.  **System Posture Overview** — Calculations of risk exposure, mitigation state, and node vulnerabilities.
+2.  **Attack Chronology** — Step-by-step logs tracking the exact objective, executed shell command, status (Success/Failure), and raw console stdout evidence.
+3.  **Remediation Action Plan** — Prioritized checklists for patching vulnerabilities discovered during the run.
 
 ---
 
-## 🛠️ Architecture Overview
+## 🛠️ System Architecture
+
+<div align="center">
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│               CYBERHUNTER NEXT.JS DASHBOARD            │
+│               CYBERHUNT NEXT.JS DASHBOARD            │
 │                  (Next.js on Port :3000)               │
 │                                                        │
 │   ┌────────────┐     ┌──────────────┐     ┌────────┐   │
@@ -96,27 +106,29 @@ The backend incorporates a dynamic **Security Assessment Report Compiler** insid
 └───────────────────────────┬────────────────────────────┘
                             │ Socket.IO
 ┌───────────────────────────┴────────────────────────────┐
-│               CYBERHUNTER BRIDGE BACKEND               │
+│               CYBERHUNT BRIDGE BACKEND               │
 │                  (Node.js on Port :3003)               │
 │                                                        │
-│  • Manages terminal PTY processes (node-pty)           │
+│  • Spawns terminal PTY processes (node-pty)            │
 │  • Synchronizes real-time metrics and alerts           │
 │  • Compiles chronological session logs into Markdown   │
 └────────────────────────────────────────────────────────┘
 ```
 
+</div>
+
 ---
 
-## 🚀 Quick Start & Installation
+## 🚀 Installation & Running
 
 ### Prerequisites
 *   Node.js 18+
 *   npm or bun
 
-### 1. Install Dependencies
-Install all package configurations in the main folder and bridge service:
+### 1. Install Project Dependencies
+Run install in both the root dashboard directory and the bridge backend service:
 ```bash
-# Install frontend dashboard dependencies
+# Install frontend dashboard package dependencies
 npm install
 
 # Install bridge backend dependencies
@@ -125,26 +137,16 @@ npm install
 cd ../..
 ```
 
-### 2. Start CYBERHUNTER Command Center
-Run the centralized startup daemon script to launch both the Socket.IO bridge and the Next.js dashboard:
+### 2. Launch Server Services
+Run the centralized startup script to initialize the bridge backend and dashboard server:
 ```bash
 chmod +x start-cyberhunter.sh
 ./start-cyberhunter.sh
 ```
 
-To force a fresh Next.js production build, run the script with the `--build` flag:
+To re-compile and bundle the production Next.js application, append the build flag:
 ```bash
 ./start-cyberhunter.sh --build
 ```
 
-Access the dashboard at `http://localhost:3000` in your web browser.
-
----
-
-## 🔒 Security Standards Mapped
-
-*   **PTES** (Penetration Testing Execution Standard)
-*   **OWASP Top 10** (Vulnerability & Exploit Triage)
-*   **SOC 2 Type II** (Compliance controls check CC6.1 - CC7.2)
-*   **NIST SP 800-61 Rev 2** (Computer Security Incident Handling Guidelines)
-*   **MITRE ATT&CK Matrix** (Tactics and adversarial TTP identification)
+Open your browser to `http://localhost:3000` to view the active console dashboard.
