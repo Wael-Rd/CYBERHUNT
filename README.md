@@ -22,7 +22,7 @@
 
 ---
 
-## 🌌 Core Capabilities
+## Core Capabilities
 
 *   **Attack Path Visualization** — Dynamic force-directed network topology mapping that renders active exploit routes, node compromises, and lateral movements in real time.
 *   **Low-Latency Terminal PTYs** — Multiple resizable, high-performance terminal consoles (`node-pty`) connected directly to active agent sandboxes over Socket.IO.
@@ -32,7 +32,7 @@
 
 ---
 
-## 🏗️ Architectural Topology
+## Architectural Topology
 
 <div align="center">
   <p>
@@ -75,7 +75,7 @@ graph TB
 
 ---
 
-## 🔄 Command & Terminal Signal Lifecycle
+## Command & Terminal Signal Lifecycle
 
 <div align="center">
   <p>
@@ -112,7 +112,7 @@ sequenceDiagram
 
 ---
 
-## 🧩 Autonomous Agent Grid
+## Autonomous Agent Grid
 
 <div align="center">
 
@@ -128,7 +128,7 @@ sequenceDiagram
 
 ---
 
-## 📊 State Triage & Threat Infection Path
+## State Triage & Threat Infection Path
 
 <div align="center">
   <p>
@@ -151,15 +151,15 @@ stateDiagram-v2
 
 ---
 
-## ⚡ The Key of Power (LLM API Configuration)
+## Gemini API Configuration
 
 <div align="center">
   <p>
-    The entire cognitive operations engine of the CYBERHUNT agent mesh is powered by the Gemini API Key, designated as the <strong>Key of Power</strong>. This key must be present in the shell configuration files of each agent workspace to enable reasoning, tool selection, and script execution.
+    The entire cognitive operations engine of the CYBERHUNT agent mesh is powered by the Gemini API Key. This key must be present in the shell configuration files of each agent workspace to enable reasoning, tool selection, and script execution.
   </p>
 </div>
 
-### 🔑 Setting up the API Key
+### Setting up the API Key
 
 Export your API token locally in the shell scripts of the respective agents:
 
@@ -176,7 +176,7 @@ Verify that the key is exported correctly in the following entrypoints:
 
 ---
 
-## 📄 Automated PTES & Compliance Report Compiler
+## Automated PTES & Compliance Report Compiler
 
 <p align="center">
   The system bridge backend manages terminal streams and translates them into comprehensive security assessment records. When a report is requested, the compiler parses the session data and writes a standard-compliant report featuring the following key components:
@@ -188,7 +188,7 @@ Verify that the key is exported correctly in the following entrypoints:
 
 ---
 
-## 🚀 Installation & Running
+## Installation & Running
 
 ### Prerequisites
 *   Node.js 18+
