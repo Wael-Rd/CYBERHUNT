@@ -169,10 +169,46 @@ export GEMINI_API_KEY="your_gemini_api_key_here"
 ```
 
 Verify that the key is exported correctly in the following entrypoints:
+
 *   `auditAGENT/xhunter-working/xhunter.sh`
 *   `ctiAGENT/xhunter-working/xhunter.sh`
 *   `socAGENT/xhunter-working/xhunter.sh`
 *   `pentestAGENT/xhunter-working/xhunter.sh`
+
+### Supported Cognitive LLM Providers
+
+While the orchestrator is optimized around the Google Gemini API, the underlying multi-agent framework supports multiple remote and local models through configuration aliases:
+*   **Google Gemini** (Gemini 1.5 Pro, Gemini 1.5 Flash)
+*   **Anthropic Claude** (Claude 3.5 Sonnet, Claude 3.0 Opus)
+*   **OpenAI GPT** (GPT-4o, GPT-4-turbo)
+*   **DeepSeek** (DeepSeek-V3, DeepSeek-R1)
+*   **OpenRouter API** (Routing to Llama-3, Mistral, Grok, Qwen)
+*   **Local Models** (Ollama, local vLLM servers)
+
+---
+
+## ![Security & Threat Resistance](https://img.shields.io/badge/Security_&_Threat-Resistance-red?style=flat-square&logo=cloudflare&logoColor=white)
+
+*   **Prompt Injection Mitigation** — Strict separation between user-provided inputs and agent system instructions. Input validation parsers isolate target strings, preventing secondary command injection attempts from altering agent behavioral models.
+*   **Process & Shell Sandboxing** — All commands are scoped under local workspace boundaries using shell wrappers. Restricted execution paths prevent access to sensitive home directory dotfiles.
+*   **Secure API Handling** — API keys are kept strictly in-memory or loaded via ephemeral local environments. No secrets are stored in state caches or exfiltrated via Socket.IO payloads.
+*   **Safety Overrides** — Strict pre-validation of target formats (e.g., matching target IP patterns) prevents agents from executing lateral sweeps outside the designated testing scope.
+
+---
+
+## ![Speed & Efficiency](https://img.shields.io/badge/Performance-Speed_&_Efficiency-green?style=flat-square&logo=speedtest&logoColor=white)
+
+*   **Low-Latency node-pty Bridge** — Real-time stdin/stdout mirroring between Next.js terminals and native shells, eliminating polling delay.
+*   **Token-Optimized Caching** — Minimizes LLM token overhead by only sending recent terminal contexts and state updates rather than full command histories.
+*   **Asynchronous Processing** — Multi-threaded execution in the bridge backend allows all 5 agents to execute sweeps and log parsing concurrently without blocking the main dashboard render loop.
+
+---
+
+## ![Data Integrity](https://img.shields.io/badge/State-Data_Integrity-blue?style=flat-square&logo=postgresql&logoColor=white)
+
+*   **Strict State Tracking** — Structured JSON log storage matches thoughts, tool parameters, execution status, and raw terminal stdout streams chronologically.
+*   **Deduplication Filters** — Bridge filters duplicate warning sequences and redundant shell logs to keep state representations clean.
+*   **Transaction-Grade History** — Backup structures persist log histories even during server restarts, preventing telemetry loss during long-running testing campaigns.
 
 ---
 
