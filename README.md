@@ -22,7 +22,7 @@
 
 ---
 
-## Core Capabilities
+## ![Capabilities](https://img.shields.io/badge/Core-Capabilities-10b981?style=flat-square&logo=cpu&logoColor=white)
 
 *   **Attack Path Visualization** — Dynamic force-directed network topology mapping that renders active exploit routes, node compromises, and lateral movements in real time.
 *   **Low-Latency Terminal PTYs** — Multiple resizable, high-performance terminal consoles (`node-pty`) connected directly to active agent sandboxes over Socket.IO.
@@ -32,7 +32,7 @@
 
 ---
 
-## Architectural Topology
+## ![Topology](https://img.shields.io/badge/Architectural-Topology-3b82f6?style=flat-square&logo=gitkraken&logoColor=white)
 
 <div align="center">
   <p>
@@ -75,7 +75,7 @@ graph TB
 
 ---
 
-## Command & Terminal Signal Lifecycle
+## ![Lifecycle](https://img.shields.io/badge/Command-Lifecycle-8b5cf6?style=flat-square&logo=activity&logoColor=white)
 
 <div align="center">
   <p>
@@ -112,7 +112,7 @@ sequenceDiagram
 
 ---
 
-## Autonomous Agent Grid
+## ![Grid](https://img.shields.io/badge/Agent-Grid-ef4444?style=flat-square&logo=matrix&logoColor=white)
 
 <div align="center">
 
@@ -128,7 +128,7 @@ sequenceDiagram
 
 ---
 
-## State Triage & Threat Infection Path
+## ![Triage](https://img.shields.io/badge/State-Triage-f59e0b?style=flat-square&logo=serverless&logoColor=white)
 
 <div align="center">
   <p>
@@ -151,7 +151,7 @@ stateDiagram-v2
 
 ---
 
-## Gemini API Configuration
+## ![Configuration](https://img.shields.io/badge/Gemini-Configuration-007acc?style=flat-square&logo=google&logoColor=white)
 
 <div align="center">
   <p>
@@ -176,7 +176,7 @@ Verify that the key is exported correctly in the following entrypoints:
 
 ---
 
-## Automated PTES & Compliance Report Compiler
+## ![Compiler](https://img.shields.io/badge/Report-Compiler-ff69b4?style=flat-square&logo=markdown&logoColor=white)
 
 <p align="center">
   The system bridge backend manages terminal streams and translates them into comprehensive security assessment records. When a report is requested, the compiler parses the session data and writes a standard-compliant report featuring the following key components:
@@ -188,7 +188,7 @@ Verify that the key is exported correctly in the following entrypoints:
 
 ---
 
-## Installation & Running
+## ![Setup](https://img.shields.io/badge/Setup-Installation-green?style=flat-square&logo=npm&logoColor=white)
 
 ### Prerequisites
 *   Node.js 18+
