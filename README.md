@@ -32,6 +32,86 @@
 
 ---
 
+## 🏗️ Architectural Topology
+
+<div align="center">
+  <p>
+    The CYBERHUNT dashboard separates user interaction, state orchestration, and sandbox task execution into distinct, modular tiers connected via real-time WebSocket events.
+  </p>
+</div>
+
+```mermaid
+graph TB
+    subgraph Frontend [Next.js Dashboard - Port 3000]
+        UI[User Interface / Control panel]
+        D3[D3.js Attack Graph]
+        XTerm[xterm.js Console Frame]
+        Metrics[KPI Metrics & Triage log]
+    end
+
+    subgraph Backend [Cyberhunter Bridge - Port 3003]
+        Bridge[Socket.IO Gateway]
+        PTYMgr[PTY Spawn Manager]
+        Compiler[PTES Report Compiler]
+        LogWatcher[Session Log Tracker]
+    end
+
+    subgraph AgentMesh [Autonomous Agent Mesh Network]
+        Audit[Audit Agent]
+        SOC[SOC Agent]
+        CTI[CTI Agent]
+        Pentest[Pentest Agent]
+        AutoUse[Auto-Use Agent]
+    end
+
+    UI <-->|Socket.IO| Bridge
+    XTerm <-->|Real-time stdout/stdin| PTYMgr
+    D3 <-->|Telemetry events| LogWatcher
+    PTYMgr <-->|node-pty session| AgentMesh
+    AgentMesh -->|JSON Session log| LogWatcher
+    LogWatcher -->|Parsed findings| Compiler
+    Compiler -->|Compiled Markdown report| UI
+```
+
+---
+
+## 🔄 Command & Terminal Signal Lifecycle
+
+<div align="center">
+  <p>
+    This diagram demonstrates the asynchronous execution pipeline, showcasing how input command data maps to standard streams, and how session logs are stored and dynamically compiled into Markdown.
+  </p>
+</div>
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Operator
+    participant UI as Dashboard UI
+    participant Bridge as Bridge Server
+    participant PTY as node-pty Shell
+    participant Agent as Autonomous Agent
+    participant Storage as Session Log (.json)
+
+    User->>UI: Submit Target (e.g., scan 20.251.144.248)
+    UI->>Bridge: socket.emit('terminal:stdin', command)
+    Bridge->>PTY: write(command)
+    PTY->>Agent: Execute in sandbox
+    Agent->>PTY: Return stdout/stderr
+    PTY->>Bridge: onData(stream)
+    Bridge->>UI: socket.emit('terminal:stdout', stream)
+    UI->>User: Render output in xterm.js
+    Agent->>Storage: Append step (Thought, Command, Tool Output)
+    User->>UI: Click "Generate Report"
+    UI->>Bridge: socket.emit('report:generate')
+    Bridge->>Storage: Read latest session JSON
+    Bridge->>Bridge: Compile chronology and proof-of-concept
+    Bridge->>UI: socket.emit('report:update', ready)
+    UI->>User: Display completed Markdown report
+```
+
+---
+
 ## 🧩 Autonomous Agent Grid
 
 <div align="center">
@@ -45,6 +125,29 @@
 | **AUTO-USE** | ![Auto-Use](https://img.shields.io/badge/Auto--Use_Agent-f59e0b?style=flat-square&logo=google-chrome&logoColor=white) | Desktop GUI task execution, browser automation, and integration of external security tools. | Playwright / PyAutoGUI |
 
 </div>
+
+---
+
+## 📊 State Triage & Threat Infection Path
+
+<div align="center">
+  <p>
+    The lifecycle of a targeted mission propagates through discrete agent threat states before triggering active playbooks and report compilations.
+  </p>
+</div>
+
+```mermaid
+stateDiagram-v2
+    [*] --> Initialized: Agent session started
+    Initialized --> Scanning: Reconnaissance triggered
+    Scanning --> VulnerabilityFound: Finding parsed in console
+    VulnerabilityFound --> ExploitPathActive: Trigger lateral movement
+    ExploitPathActive --> Compromised: Target node compromised (Root)
+    Compromised --> AlertTriggered: Ingest to SOC Threat Feed
+    AlertTriggered --> ReportPending: User initiates documentation
+    ReportPending --> Compiled: Bridge compiles PoC and stdout logs
+    Compiled --> [*]: Remediation plan generated
+```
 
 ---
 
@@ -82,40 +185,6 @@ Verify that the key is exported correctly in the following entrypoints:
 1.  **System Posture Overview** — Calculations of risk exposure, mitigation state, and node vulnerabilities.
 2.  **Attack Chronology** — Step-by-step logs tracking the exact objective, executed shell command, status (Success/Failure), and raw console stdout evidence.
 3.  **Remediation Action Plan** — Prioritized checklists for patching vulnerabilities discovered during the run.
-
----
-
-## 🛠️ System Architecture
-
-<div align="center">
-
-```
-┌────────────────────────────────────────────────────────┐
-│               CYBERHUNT NEXT.JS DASHBOARD            │
-│                  (Next.js on Port :3000)               │
-│                                                        │
-│   ┌────────────┐     ┌──────────────┐     ┌────────┐   │
-│   │ Sidebar    │     │ Attack Graph │     │ Threat │   │
-│   │ Controls   │     │   (D3.js)    │     │  Feed  │   │
-│   └────────────┘     └──────────────┘     └────────┘   │
-│                                                        │
-│   ┌────────────────────────────────────────────────┐   │
-│   │          xterm.js Terminals (Socket.IO)         │   │
-│   │    [AUDIT]  [SOC]  [CTI]  [PENTEST]  [AUTO]    │   │
-│   └────────────────────────────────────────────────┘   │
-└───────────────────────────┬────────────────────────────┘
-                            │ Socket.IO
-┌───────────────────────────┴────────────────────────────┐
-│               CYBERHUNT BRIDGE BACKEND               │
-│                  (Node.js on Port :3003)               │
-│                                                        │
-│  • Spawns terminal PTY processes (node-pty)            │
-│  • Synchronizes real-time metrics and alerts           │
-│  • Compiles chronological session logs into Markdown   │
-└────────────────────────────────────────────────────────┘
-```
-
-</div>
 
 ---
 
